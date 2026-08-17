@@ -414,7 +414,7 @@ section{min-height:100svh;display:grid;place-items:center;padding:90px 20px;posi
   <div class="wrap center reveal">
     <div class="eyebrow">A little movie for you</div>
     <div class="title" style="font-size:clamp(55px,9vw,100px)">Our <span class="gradient">Story</span></div>
-    <div class="video-box"><video controls playsinline poster="video-poster.jpg"><source src="WhatsApp Video 2026-08-18 at 12.24.35 AM.mp4" type="video/mp4"></video></div>
+    <div class="video-box"><video controls playsinline poster="video-poster.jpg"><source src="WhatsApp Video 2026-08-18 at 1.37.34 AM.mp4" type="video/mp4"></video></div>
     <div class="hint">Add your own <b>our-video.mp4</b> to make this part completely personal.</div>
   </div>
 </section>
@@ -482,10 +482,10 @@ section{min-height:100svh;display:grid;place-items:center;padding:90px 20px;posi
       <div class="t"><div><strong id="s">00</strong><small>SECONDS</small></div></div>
     </div>
     <p id="timeSince" class="hint" style="margin-top:24px;color:#bda9b4;font-size:12px;letter-spacing:2px;text-transform:uppercase">
-      Since your 25th birthday began ✨
+      Countdown to your 25th birthday ✨
     </p>
     <p style="max-width:620px;margin:18px auto 0;color:#aaa;line-height:1.8;font-family:'Cormorant Garamond',serif;font-size:21px">
-      The countdown is over. The story has begun. ❤️<br>
+      The countdown ends here. The magic begins now. ❤️<br>
       Here's to every second, every smile, and every beautiful moment waiting for you this year.
     </p>
   </div>
@@ -530,22 +530,41 @@ function toggleMusic(){
   else{music.play();musicBtn.textContent="Ⅱ";playing=true}
 }
 function tick(){
-  // The birthday has started, so this clock counts UP from midnight.
-  let x=Math.max(0,Date.now()-new Date(birthday));
+  const target=new Date(birthday);
+  const now=Date.now();
+  const msLeft=target.getTime()-now;
+  const isPast=msLeft<=0;
+  const dEl=document.getElementById("d");
+  const hEl=document.getElementById("h");
+  const mEl=document.getElementById("m");
+  const sEl=document.getElementById("s");
+  const since=document.getElementById("timeSince");
+
+  if(isPast){
+    dEl.textContent="00";
+    hEl.textContent="00";
+    mEl.textContent="00";
+    sEl.textContent="00";
+
+    if(since){
+      since.textContent="The birthday has arrived • the love is still glowing ✨";
+    }
+    return;
+  }
+
+  let x=msLeft;
   let day=Math.floor(x/86400000);x%=86400000;
   let hr=Math.floor(x/3600000);x%=3600000;
   let min=Math.floor(x/60000);x%=60000;
   let sec=Math.floor(x/1000);
 
-  d.textContent=String(day).padStart(2,"0");
-  h.textContent=String(hr).padStart(2,"0");
-  m.textContent=String(min).padStart(2,"0");
-  s.textContent=String(sec).padStart(2,"0");
+  dEl.textContent=String(day).padStart(2,"0");
+  hEl.textContent=String(hr).padStart(2,"0");
+  mEl.textContent=String(min).padStart(2,"0");
+  sEl.textContent=String(sec).padStart(2,"0");
 
-  const since=document.getElementById("timeSince");
   if(since){
-    since.textContent=
-      "Since your 25th birthday began • " +
+    since.textContent="Countdown to your 25th birthday • " +
       day + " day" + (day===1?"":"s") + " • " +
       String(hr).padStart(2,"0") + "h • " +
       String(min).padStart(2,"0") + "m • " +
