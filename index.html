@@ -1,0 +1,634 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050208">
+<title>Anshu ❤️ — A Birthday Story</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600&family=Noto+Serif+Devanagari:wght@400;500;600&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#050208;color:#fff;font-family:Manrope,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;z-index:-10;background:radial-gradient(circle at 20% 20%,rgba(255,55,130,.20),transparent 28%),radial-gradient(circle at 85% 75%,rgba(125,70,255,.20),transparent 32%),linear-gradient(145deg,#040207,#120718 55%,#050208)}
+#stars{position:fixed;inset:0;z-index:-9;opacity:.35;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:85px 85px;animation:sky 24s linear infinite}
+@keyframes sky{to{background-position:-85px 85px}}
+#hearts{position:fixed;inset:0;pointer-events:none;z-index:80;overflow:hidden}
+.heart{position:absolute;bottom:-30px;color:#ff9bbb;filter:drop-shadow(0 0 9px rgba(255,80,145,.65));animation:rise linear forwards}
+@keyframes rise{to{transform:translate3d(var(--x),-115vh,0) rotate(360deg);opacity:0}}
+#intro{position:fixed;inset:0;z-index:100;display:grid;place-items:center;background:#050208;transition:1.3s ease}
+#intro.hide{opacity:0;visibility:hidden;pointer-events:none}
+.intro{text-align:center;padding:25px}
+.kicker{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#dba5b8}
+.intro h1{font:500 clamp(80px,19vw,170px)/.7 "Cormorant Garamond",serif;margin:25px 0;background:linear-gradient(120deg,#fff,#ffabc5,#d59cff,#fff);background-size:300%;-webkit-background-clip:text;color:transparent;animation:shine 6s infinite}
+@keyframes shine{50%{background-position:100%}}
+.intro p{max-width:430px;margin:0 auto 30px;color:#999;line-height:1.8;font-size:13px}
+.btn{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.06);color:#fff;padding:15px 28px;border-radius:999px;cursor:pointer;backdrop-filter:blur(15px);transition:.3s}
+.btn:hover{transform:scale(1.04);box-shadow:0 15px 50px rgba(255,70,140,.3)}
+.music{position:fixed;right:18px;bottom:18px;z-index:90;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:rgba(10,5,15,.7);color:#fff;cursor:pointer;backdrop-filter:blur(15px)}
+section{min-height:100svh;display:grid;place-items:center;padding:90px 20px;position:relative}
+.wrap{width:min(1050px,94vw);margin:auto}
+.center{text-align:center}
+.eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:#d99bb2;margin-bottom:20px}
+.title{font:500 clamp(62px,12vw,145px)/.78 "Cormorant Garamond",serif}
+.gradient{background:linear-gradient(120deg,#fff,#ff9fbe 45%,#cf9cff);-webkit-background-clip:text;color:transparent}
+.hero .sub{max-width:630px;margin:40px auto 0;color:#bcb5bd;line-height:1.9;font-size:15px}
+.scroll{margin-top:65px;color:#777;font-size:9px;letter-spacing:5px;animation:bob 2s infinite}
+@keyframes bob{50%{transform:translateY(8px)}}
+.reveal{opacity:0;transform:translateY(35px);transition:1.2s ease}
+.reveal.show{opacity:1;transform:none}
+.photo-wrap{width:min(430px,89vw);margin:45px auto 0;position:relative}
+.photo-glow{position:absolute;inset:-45px;background:radial-gradient(circle,rgba(255,65,135,.35),transparent 65%);filter:blur(20px)}
+.photo{position:relative;width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:220px 220px 30px 30px;border:1px solid rgba(255,255,255,.23);box-shadow:0 40px 110px rgba(0,0,0,.75)}
+.caption{font:400 30px/1.2 "Cormorant Garamond",serif;color:#f4bfd1;margin-top:28px}
+.letter{max-width:770px;margin:auto;padding:55px 45px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.045);backdrop-filter:blur(25px);border-radius:34px;box-shadow:0 40px 110px rgba(0,0,0,.45)}
+.letter h2{font:600 56px "Cormorant Garamond",serif;color:#ffabc5;margin-bottom:28px}
+.letter p{font:400 23px/1.7 "Cormorant Garamond",serif;color:#ddd}
+.gallery{display:grid;grid-template-columns:1.1fr .9fr;grid-template-rows:270px 270px;gap:16px;margin-top:50px}
+.card{overflow:hidden;border-radius:26px;border:1px solid rgba(255,255,255,.12);background:#111}
+.card:first-child{grid-row:span 2}
+.card img{width:100%;height:100%;object-fit:cover;transition:1s}
+.card:hover img{transform:scale(1.07)}
+.video-box{max-width:860px;margin:45px auto 0;border-radius:28px;overflow:hidden;border:1px solid rgba(255,255,255,.16);background:#000;box-shadow:0 30px 100px rgba(0,0,0,.6)}
+.video-box video{width:100%;display:block;max-height:70vh}
+.hint{font-size:11px;color:#777;margin-top:14px}
+.timer{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:50px}
+.t{width:120px;height:120px;border-radius:25px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.045);backdrop-filter:blur(15px);display:grid;place-items:center}
+.t strong{display:block;text-align:center;font-size:34px;color:#ffabc5}.t small{display:block;text-align:center;color:#888;font-size:9px;letter-spacing:3px}
+.cake{font-size:80px;cursor:pointer;margin:28px;display:inline-block;transition:.3s;filter:drop-shadow(0 0 25px rgba(255,120,170,.45))}
+.cake:hover{transform:scale(1.1)}
+.final{text-align:center}
+.final .heart{position:static;display:inline-block;font-size:76px;animation:pulse 1.2s infinite}
+@keyframes pulse{50%{transform:scale(1.23)}}
+.final h2{font:500 clamp(60px,11vw,140px)/.78 "Cormorant Garamond",serif;margin:25px 0}
+.final p{color:#999}.signature{margin-top:40px;color:#aaa;font-family:"Cormorant Garamond",serif;font-size:27px}
+.tiny{margin-top:30px;color:#555;font-size:9px;letter-spacing:4px}
+@media(max-width:700px){.letter{padding:35px 24px}.letter p{font-size:21px}.gallery{grid-template-columns:1fr;grid-template-rows:310px 230px 230px}.card:first-child{grid-row:auto}.t{width:92px;height:92px}.t strong{font-size:26px}}
+
+
+.shayari-section{min-height:auto;padding:115px 20px}
+.shayari-grid{display:grid;grid-template-columns:1fr;gap:32px;margin-top:58px;max-width:900px;margin-left:auto;margin-right:auto}
+.shayari-card{
+  position:relative;min-height:260px;padding:0;border:0;background:none;
+  perspective:1200px;overflow:visible;opacity:0;transform:translateY(55px);
+  transition:opacity .9s ease,transform 1s cubic-bezier(.2,.8,.2,1);
+}
+.shayari-card.show{opacity:1;transform:none}
+.shayari-card:nth-child(even){transform:translateY(55px) translateX(35px)}
+.shayari-card:nth-child(even).show{transform:none}
+.shayari-card:before{
+  content:"";position:absolute;left:18px;right:18px;top:14px;bottom:-12px;
+  border-radius:28px;background:rgba(255,255,255,.035);
+  border:1px solid rgba(255,255,255,.07);filter:blur(.2px);
+}
+.shayari-inner{
+  position:relative;z-index:2;padding:40px 42px 38px;border-radius:28px;
+  border:1px solid rgba(255,255,255,.14);
+  background:linear-gradient(135deg,rgba(255,255,255,.075),rgba(255,90,145,.035));
+  backdrop-filter:blur(22px);
+  box-shadow:0 30px 90px rgba(0,0,0,.38);
+  overflow:hidden;
+}
+.shayari-inner:after{
+  content:"";position:absolute;top:-80px;right:-80px;width:190px;height:190px;
+  border-radius:50%;background:rgba(255,125,170,.10);filter:blur(25px);
+}
+.shayari-number{
+  font:600 11px Manrope,sans-serif;letter-spacing:4px;color:#777;
+  margin-bottom:18px;text-transform:uppercase;
+}
+.shayari-card h3{
+  position:relative;z-index:2;font:500 34px "Cormorant Garamond",serif;
+  color:#ffb1c8;margin-bottom:20px;
+}
+.shayari-card p{
+  position:relative;z-index:2;font:400 21px/2 "Noto Serif Devanagari","Cormorant Garamond",serif;
+  color:#eee;margin:0;
+}
+.shayari-card b{color:#ffc2d3;font-weight:600}
+.shayari-card .seal{
+  position:absolute;right:28px;bottom:22px;font-size:28px;opacity:.7;
+}
+.shayari-card:nth-child(3n+1) .shayari-inner{border-radius:35px 12px 35px 12px}
+.shayari-card:nth-child(3n+2) .shayari-inner{border-radius:12px 35px 12px 35px}
+.shayari-card:nth-child(3n) .shayari-inner{border-radius:28px}
+.distance-note{
+  max-width:820px;margin:58px auto 0;padding:32px 28px;border-radius:28px;
+  border:1px solid rgba(255,255,255,.11);
+  background:linear-gradient(135deg,rgba(255,255,255,.055),rgba(155,90,255,.035));
+  color:#c8c0c8;font-size:13px;line-height:1.9;text-align:center;
+  box-shadow:0 25px 80px rgba(0,0,0,.3);
+}
+.distance-note b{color:#ffb1c8}
+@media(max-width:700px){
+  .shayari-card{min-height:0}
+  .shayari-inner{padding:32px 23px 38px}
+  .shayari-card h3{font-size:30px}
+  .shayari-card p{font-size:18px;line-height:1.9}
+  .shayari-card:nth-child(even){transform:translateY(45px)}
+}
+@media(max-width:700px){.shayari-grid{grid-template-columns:1fr}.shayari-card{padding:30px 22px}.shayari-card p{font-size:18px}}
+
+.distance-note{max-width:820px;margin:42px auto 0;padding:28px 24px;border-radius:25px;border:1px solid rgba(255,255,255,.11);background:rgba(255,255,255,.035);color:#bfb7bf;font-size:13px;line-height:1.8}
+.distance-note b{color:#ffb1c8}
+
+/* ===== CINEMATIC DIRECTIONAL SHAYARI ANIMATIONS ===== */
+.shayari-card{
+  opacity:0;
+  transform:translate3d(0,80px) scale(.96) rotateX(8deg);
+  transition:none !important;
+  will-change:transform,opacity;
+}
+.shayari-card:nth-child(4n+1){transform:translate3d(-110px,65px,0) rotate(-4deg) scale(.94)}
+.shayari-card:nth-child(4n+2){transform:translate3d(110px,65px,0) rotate(4deg) scale(.94)}
+.shayari-card:nth-child(4n+3){transform:translate3d(-75px,-70px,0) rotate(3deg) scale(.94)}
+.shayari-card:nth-child(4n){transform:translate3d(75px,-70px,0) rotate(-3deg) scale(.94)}
+.shayari-card.show{
+  opacity:1;
+  transform:translate3d(0,0,0) rotate(0) scale(1);
+  transition:
+    transform 1.15s cubic-bezier(.16,1,.3,1),
+    opacity .9s ease !important;
+}
+.shayari-card.show .shayari-inner{
+  animation:letterGlow 1.6s ease both;
+}
+@keyframes letterGlow{
+  0%{box-shadow:0 0 0 rgba(255,90,145,0)}
+  45%{box-shadow:0 0 45px rgba(255,90,145,.18)}
+  100%{box-shadow:0 30px 90px rgba(0,0,0,.38)}
+}
+
+/* Individual Shayari text reveals line-by-line */
+.shayari-card p .shayari-line{
+  display:block;
+  opacity:0;
+  transform:translateY(14px);
+}
+.shayari-card.show p .shayari-line{
+  animation:lineRise .7s cubic-bezier(.16,1,.3,1) forwards;
+}
+@keyframes lineRise{
+  to{opacity:1;transform:none}
+}
+
+/* ===== ANSHU LETTER-BY-LETTER DROP ===== */
+.an-shu-name{
+  display:inline-flex;
+  justify-content:center;
+  gap:.01em;
+  overflow:visible;
+}
+.an-shu-name .name-letter{
+  display:inline-block;
+  opacity:0;
+  transform:translateY(-90px) rotate(10deg) scale(.65);
+  filter:blur(5px);
+}
+.an-shu-name.animate .name-letter{
+  animation:nameDrop .8s cubic-bezier(.16,1,.3,1) forwards;
+}
+@keyframes nameDrop{
+  0%{opacity:0;transform:translateY(-90px) rotate(10deg) scale(.65);filter:blur(5px)}
+  65%{opacity:1;transform:translateY(10px) rotate(-2deg) scale(1.05);filter:blur(0)}
+  100%{opacity:1;transform:translateY(0) rotate(0) scale(1);filter:blur(0)}
+}
+
+/* Tiny sparkle that follows the final letter */
+.name-spark{
+  display:inline-block;
+  opacity:0;
+  margin-left:10px;
+  transform:scale(0);
+}
+.an-shu-name.animate .name-spark{
+  animation:sparkPop .6s .9s ease forwards;
+}
+@keyframes sparkPop{
+  60%{opacity:1;transform:scale(1.35) rotate(15deg)}
+  100%{opacity:1;transform:scale(1) rotate(0)}
+}
+
+@media(max-width:700px){
+  .shayari-card:nth-child(4n+1){transform:translate3d(-65px,45px,0) rotate(-3deg) scale(.95)}
+  .shayari-card:nth-child(4n+2){transform:translate3d(65px,45px,0) rotate(3deg) scale(.95)}
+  .shayari-card:nth-child(4n+3){transform:translate3d(-45px,-45px,0) rotate(2deg) scale(.95)}
+  .shayari-card:nth-child(4n){transform:translate3d(45px,-45px,0) rotate(-2deg) scale(.95)}
+}
+
+
+/* ===== WORD-BY-WORD "CRICKET BALL" DROP ===== */
+.word-drop-title{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:flex-end;
+  gap:.18em;
+  line-height:1;
+  perspective:900px;
+}
+.drop-word{
+  display:inline-block;
+  opacity:0;
+  transform:translate3d(0,-150px,0) rotateX(-35deg) rotateZ(0deg) scale(.72);
+  filter:blur(7px);
+  will-change:transform,opacity;
+}
+.drop-word.land{
+  animation:cricketDrop 1.05s cubic-bezier(.18,.88,.28,1.35) forwards;
+}
+@keyframes cricketDrop{
+  0%{
+    opacity:0;
+    transform:translate3d(0,-150px,0) rotateX(-35deg) rotateZ(0deg) scale(.72);
+    filter:blur(7px);
+  }
+  52%{
+    opacity:1;
+    transform:translate3d(0,18px,0) rotateX(8deg) rotateZ(-3deg) scale(1.08);
+    filter:blur(0);
+  }
+  70%{
+    transform:translate3d(0,-9px,0) rotateX(-3deg) rotateZ(2deg) scale(.98);
+  }
+  84%{
+    transform:translate3d(0,5px,0) rotateX(1deg) rotateZ(-1deg) scale(1.02);
+  }
+  100%{
+    opacity:1;
+    transform:translate3d(0,0,0) rotateX(0) rotateZ(0) scale(1);
+    filter:blur(0);
+  }
+}
+.drop-word.done{
+  animation:wordGlow .7s ease forwards;
+}
+@keyframes wordGlow{
+  0%{text-shadow:0 0 0 rgba(255,150,190,0)}
+  45%{text-shadow:0 0 25px rgba(255,150,190,.5)}
+  100%{text-shadow:0 0 0 rgba(255,150,190,0)}
+}
+.word-heart{
+  display:inline-block;
+  opacity:0;
+  transform:translateY(-100px) scale(.5);
+}
+.word-heart.land{
+  animation:heartLand 1s .1s cubic-bezier(.18,.88,.28,1.3) forwards;
+}
+@keyframes heartLand{
+  0%{opacity:0;transform:translateY(-100px) scale(.5)}
+  65%{opacity:1;transform:translateY(10px) scale(1.35)}
+  82%{transform:translateY(-5px) scale(.92)}
+  100%{opacity:1;transform:translateY(0) scale(1)}
+}
+@media(max-width:700px){
+  .word-drop-title{gap:.12em}
+}
+
+</style>
+</head>
+<body>
+<div id="stars"></div><div id="hearts"></div>
+
+<div id="intro">
+  <div class="intro">
+    <div class="kicker">18 August 2001 • A special day</div>
+    <h1>
+      <span class="an-shu-name gradient" id="anshuName">
+        <span class="name-letter">A</span>
+        <span class="name-letter">n</span>
+        <span class="name-letter">s</span>
+        <span class="name-letter">h</span>
+        <span class="name-letter">u</span>
+        <span class="name-spark">❤️</span>
+      </span>
+    </h1>
+    <p><span class="shayari-line" style="animation-delay:0.10s">Vishal made a little journey for you — a few words, a few memories, and a lot of feelings. Put on your headphones and open it when you’re ready.</span></p>
+    <button class="btn" onclick="openStory()">BEGIN THE STORY ✨</button>
+  </div>
+</div>
+
+<button class="music" id="musicBtn" onclick="toggleMusic()">♪</button>
+<audio id="music" loop><source src="song.mp3" type="audio/mpeg"></audio>
+
+<section class="hero">
+  <div class="wrap center reveal">
+    <div class="eyebrow">18 August 2026</div>
+    <div class="title">Happy<br><span class="gradient">25th Birthday</span></div>
+    <p class="sub">Before you read anything else, remember this: somewhere in this world, there is someone smiling simply because you exist.</p>
+    <div class="scroll">KEEP SCROLLING ↓</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap center reveal">
+    <div class="eyebrow">The girl behind the smile</div>
+    <div class="photo-wrap">
+      <div class="photo-glow"></div>
+      <img class="photo" src="image1.jpeg" alt="Anshu">
+    </div>
+    <div class="caption">Some people are beautiful.<br>Some people make life beautiful.<br><span style="font-family:'Noto Serif Devanagari',serif;font-size:20px;color:#dba9ba">तुम मेरी उन खूबसूरत वजहों में से एक हो, जिनसे मैं मुस्कुराता हूँ। ❤️</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap reveal">
+    <div class="letter">
+      <h2 class="word-drop-title" id="dearAnshu">
+  <span class="drop-word">Dear</span>
+  <span class="drop-word">Anshu,</span>
+  <span class="word-heart">❤️</span>
+</h2>
+      <p><span class="shayari-line" style="animation-delay:0.10s">Happy Birthday, beautiful.</span>
+<span class="shayari-line" style="animation-delay:0.20s">Today I don't want to give you just another birthday wish. I wanted to leave you something you could come back to whenever you need a reminder of how special you are.</span>
+<span class="shayari-line" style="animation-delay:0.30s">I hope 25 brings you courage for the things you dream about, peace when life gets difficult, and countless reasons to smile.</span>
+<span class="shayari-line" style="animation-delay:0.40s">I may not always have the perfect words, but I want you to know that your happiness matters to me. Your smile matters to me. And the little moments we share matter to me more than you probably realize.</span>
+<span class="shayari-line" style="animation-delay:0.50s">On your birthday, I wish you a beautiful life — and, if life allows it, I hope I get to stand beside you for many chapters of it.</span>
+<span class="shayari-line" style="animation-delay:0.60s">Keep shining, Anshu. The world is better with your smile in it.</span>
+<span class="shayari-line" style="animation-delay:0.70s">With love,</span>
+<span class="shayari-line" style="animation-delay:0.80s"><span class="gradient">Vishal ❤️</span></span></p>
+    </div>
+  </div>
+</section>
+
+<section class="shayari-section">
+  <div class="wrap center reveal">
+    <div class="eyebrow">कुछ बातें दिल से ❤️</div>
+    <div class="title" style="font-size:clamp(55px,9vw,105px)">For <span class="gradient">Anshu</span></div>
+
+    <div class="shayari-grid">
+
+      <div class="shayari-card">
+      <div class="shayari-inner">
+        <div class="shayari-number">LETTER 01 • FROM VISHAL</div>
+        <h3>तुम्हारे लिए 🌹</h3>
+        <p><span class="shayari-line" style="animation-delay:0.10s">तुम्हें देखा तो लगा, ख़ूबसूरती अभी बाकी है,</span>
+<span class="shayari-line" style="animation-delay:0.20s">तुम्हारी मुस्कान में ही मेरी दुनिया सारी है।</span>
+<span class="shayari-line" style="animation-delay:0.30s">यूँ तो बहुत लोग मिलते हैं इस सफ़र में,</span>
+<span class="shayari-line" style="animation-delay:0.40s">मगर तुमसे मिलकर लगा…</span>
+<span class="shayari-line" style="animation-delay:0.50s"><b>ज़िंदगी सच में प्यारी है। ❤️</b></span></p>
+        <div class="seal">♡</div>
+      </div>
+    </div>
+
+      <div class="shayari-card">
+      <div class="shayari-inner">
+        <div class="shayari-number">LETTER 04 • FROM VISHAL</div>
+        <h3>एक वादा सा 💍</h3>
+        <p><span class="shayari-line" style="animation-delay:0.10s">हर मौसम में तुम्हारे साथ चलना है,</span>
+<span class="shayari-line" style="animation-delay:0.20s">तुम्हारी हँसी में अपनी खुशी ढूँढना है।</span>
+<span class="shayari-line" style="animation-delay:0.30s">रास्ते चाहे जैसे भी हों ज़िंदगी के,</span>
+<span class="shayari-line" style="animation-delay:0.40s">बस हाथ तुम्हारा हो…</span>
+<span class="shayari-line" style="animation-delay:0.50s"><b>और सफ़र पूरा तुम्हारे साथ करना है। ❤️</b></span></p>
+        <div class="seal">♡</div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap center reveal">
+    <div class="eyebrow">Moments worth keeping</div>
+    <div class="title" style="font-size:clamp(55px,9vw,105px)">Our <span class="gradient">Memories</span></div>
+    <div class="gallery">
+      <div class="card"><img src="image_2.jpeg" alt="Memory 1"></div>
+      <div class="card"><img src="WhatsApp Image 2026-08-17 at 10.48.10 PM.jpeg" alt="Memory 2"></div>
+      <div class="card"><img src="WhatsApp Image 2026-08-18 at 12.09.28 AM.jpeg" alt="Memory 3"></div>
+       <div class="card"><img src="WhatsApp Image 2026-08-09 at 11.09.07 PM.jpeg" alt="Memory 3"></div>
+        <div class="card"><img src="WhatsApp Image 2026-08-09 at 10.50.04 PM.jpeg" alt="Memory 3"></div>
+         <div class="card"><img src="WhatsApp Image 2026-08-09 at 10.20.13 PM.jpeg" alt="Memory 3"></div>
+        <div class="card"><img src="WhatsApp Image 2026-08-09 at 10.32.59 PM (1).jpeg" alt="Memory 3"></div>
+       
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap center reveal">
+    <div class="eyebrow">A little movie for you</div>
+    <div class="title" style="font-size:clamp(55px,9vw,100px)">Our <span class="gradient">Story</span></div>
+    <div class="video-box"><video controls playsinline poster="video-poster.jpg"><source src="WhatsApp Video 2026-08-18 at 12.24.35 AM.mp4" type="video/mp4"></video></div>
+    <div class="hint">Add your own <b>our-video.mp4</b> to make this part completely personal.</div>
+  </div>
+</section>
+
+
+<section>
+  <div class="wrap center reveal">
+    <div class="video-box"><video controls playsinline poster="video-poster.jpg"><source src="YTShort_18Aug2026_00_56_59.mp4" type="video/mp4"></video></div>
+    <div class="hint">Add your own <b>our-video.mp4</b> to make this part completely personal.</div>
+  </div>
+</section>
+
+
+<section class="shayari-section">
+  <div class="wrap center reveal">
+    <div class="eyebrow">CHAPTER • फासले सिर्फ़ रास्तों में हैं ❤️</div>
+    <div class="title" style="font-size:clamp(55px,9vw,105px)">A Little <span class="gradient">Closer</span></div>
+
+    <div class="shayari-grid">
+      <div class="shayari-card">
+      <div class="shayari-inner">
+        <div class="shayari-number">LETTER 12 • FROM VISHAL</div>
+        <h3>08 • मेरा अपना सा एहसास 🫶</h3>
+        <p><span class="shayari-line" style="animation-delay:0.10s">लोग कहते हैं पास रहना ज़रूरी है,</span>
+<span class="shayari-line" style="animation-delay:0.20s">मैंने तुमसे जाना, दिल का पास होना काफी है।</span>
+<span class="shayari-line" style="animation-delay:0.30s">तुम जहाँ भी रहो Anshu,</span>
+<span class="shayari-line" style="animation-delay:0.40s">मेरे दिल में तुम्हारी जगह हमेशा पास है। ❤️</span></p>
+        <div class="seal">♡</div>
+      </div>
+    </div>
+
+      <div class="shayari-card">
+      <div class="shayari-inner">
+        <div class="shayari-number">LETTER 13 • FROM VISHAL</div>
+        <h3>09 • रात की आख़िरी बात 🌙</h3>
+        <p><span class="shayari-line" style="animation-delay:0.10s">सोने से पहले जब आँखें बंद करता हूँ,</span>
+<span class="shayari-line" style="animation-delay:0.20s">सबसे पहले तुम्हारा चेहरा याद आता है।</span>
+<span class="shayari-line" style="animation-delay:0.30s">फिर दिल चुपके से कहता है,</span>
+<span class="shayari-line" style="animation-delay:0.40s">“काश आज तुम यहीं होती…” ❤️</span></p>
+        <div class="seal">♡</div>
+      </div>
+    </div>
+
+
+    </div>
+
+    <div class="distance-note">
+      <b>Anshu,</b> शहरों की दूरी हमारे बीच है, दिलों की नहीं।
+      जब भी तुम्हें मेरी कमी महसूस हो, इस पेज को खोल लेना—
+      समझ लेना Vishal कहीं दूर होकर भी तुम्हारे बिल्कुल पास है। ❤️
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap center reveal">
+    <div class="eyebrow">One more little surprise</div>
+    <div class="title" style="font-size:clamp(55px,9vw,100px)">Make a <span class="gradient">Wish</span></div>
+    <div class="cake" onclick="celebrate()">🎂</div>
+    <p id="wish" style="color:#aaa">Tap the cake. Make a wish. ✨</p>
+    <div class="timer">
+      <div class="t"><div><strong id="d">00</strong><small>DAYS</small></div></div>
+      <div class="t"><div><strong id="h">00</strong><small>HOURS</small></div></div>
+      <div class="t"><div><strong id="m">00</strong><small>MINUTES</small></div></div>
+      <div class="t"><div><strong id="s">00</strong><small>SECONDS</small></div></div>
+    </div>
+    <p id="timeSince" class="hint" style="margin-top:24px;color:#bda9b4;font-size:12px;letter-spacing:2px;text-transform:uppercase">
+      Since your 25th birthday began ✨
+    </p>
+    <p style="max-width:620px;margin:18px auto 0;color:#aaa;line-height:1.8;font-family:'Cormorant Garamond',serif;font-size:21px">
+      The countdown is over. The story has begun. ❤️<br>
+      Here's to every second, every smile, and every beautiful moment waiting for you this year.
+    </p>
+  </div>
+</section>
+
+<section class="shayari-section">
+  <div class="wrap center reveal">
+    <div class="shayari-card" style="max-width:780px;margin:auto">
+      <h3>और अगर कभी मेरी याद आए… 🥺</h3>
+      <p><span class="shayari-line" style="animation-delay:0.10s">दूर रहकर भी तुम्हें पास महसूस करता हूँ,</span>
+<span class="shayari-line" style="animation-delay:0.20s">हर छोटी खुशी में तुम्हारा नाम ढूँढता हूँ।</span>
+<span class="shayari-line" style="animation-delay:0.30s">कभी पूछ लेना इस दिल से क्या चाहिए,</span>
+<span class="shayari-line" style="animation-delay:0.40s">ये बस इतना कहेगा —</span>
+<span class="shayari-line" style="animation-delay:0.50s"><b>“Anshu, तुम्हें हर जन्म में फिर से चुनना चाहता हूँ।” ❤️</b></span></p>
+      <div class="roman">— तुम्हारा Vishal</div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap reveal">
+    <div class="heart">❤️</div>
+    <h2>Anshu,<br><span class="gradient">Out of everyone in this world, I’d choose you every time..</span></h2>
+    <p><span class="shayari-line" style="animation-delay:0.10s">Happy Birthday, beautiful. 🌹</span></p>
+    <div class="signature">— Vishal</div>
+    <div class="tiny">MADE WITH LOVE • JUST FOR YOU</div>
+  </div>
+</section>
+
+<script>
+setTimeout(()=>document.getElementById("anshuName").classList.add("animate"),350);
+const birthday="2026-08-18T00:00:00+05:30";
+const intro=document.getElementById("intro"),music=document.getElementById("music"),musicBtn=document.getElementById("musicBtn");
+let playing=false;
+
+function openStory(){
+  intro.classList.add("hide");
+  music.play().then(()=>{playing=true;musicBtn.textContent="Ⅱ"}).catch(()=>{});
+}
+function toggleMusic(){
+  if(playing){music.pause();musicBtn.textContent="♪";playing=false}
+  else{music.play();musicBtn.textContent="Ⅱ";playing=true}
+}
+function tick(){
+  // The birthday has started, so this clock counts UP from midnight.
+  let x=Math.max(0,Date.now()-new Date(birthday));
+  let day=Math.floor(x/86400000);x%=86400000;
+  let hr=Math.floor(x/3600000);x%=3600000;
+  let min=Math.floor(x/60000);x%=60000;
+  let sec=Math.floor(x/1000);
+
+  d.textContent=String(day).padStart(2,"0");
+  h.textContent=String(hr).padStart(2,"0");
+  m.textContent=String(min).padStart(2,"0");
+  s.textContent=String(sec).padStart(2,"0");
+
+  const since=document.getElementById("timeSince");
+  if(since){
+    since.textContent=
+      "Since your 25th birthday began • " +
+      day + " day" + (day===1?"":"s") + " • " +
+      String(hr).padStart(2,"0") + "h • " +
+      String(min).padStart(2,"0") + "m • " +
+      String(sec).padStart(2,"0") + "s ✨";
+  }
+}
+setInterval(tick,1000);tick();
+
+function makeHeart(){
+  const e=document.createElement("span");e.className="heart";
+  e.textContent=["❤","♡","✦","♥"][Math.floor(Math.random()*4)];
+  e.style.left=Math.random()*100+"vw";
+  e.style.fontSize=(12+Math.random()*20)+"px";
+  e.style.setProperty("--x",(Math.random()*180-90)+"px");
+  e.style.animationDuration=(5+Math.random()*5)+"s";
+  document.getElementById("hearts").appendChild(e);
+  setTimeout(()=>e.remove(),11000);
+}
+setInterval(makeHeart,650);
+
+function celebrate(){
+  document.getElementById("wish").textContent="✨ Wish made. May this year be beautiful, Anshu. ❤️";
+  for(let i=0;i<70;i++)setTimeout(makeHeart,i*25);
+}
+
+const shayariObserver=new IntersectionObserver(entries=>{
+  entries.forEach((entry)=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+      shayariObserver.unobserve(entry.target);
+    }
+  });
+},{threshold:.16});
+document.querySelectorAll(".shayari-card").forEach((card,i)=>{
+  card.style.transitionDelay=(i*90)+"ms";
+  shayariObserver.observe(card);
+});
+
+
+
+const dearTitle=document.getElementById("dearAnshu");
+let dearPlayed=false;
+const dearObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting && !dearPlayed){
+      dearPlayed=true;
+      const words=dearTitle.querySelectorAll(".drop-word");
+      words.forEach((word,i)=>{
+        setTimeout(()=>{
+          word.classList.add("land");
+          setTimeout(()=>word.classList.add("done"),850);
+        },i*650);
+      });
+      setTimeout(()=>{
+        dearTitle.querySelector(".word-heart").classList.add("land");
+      },words.length*650+120);
+      dearObserver.disconnect();
+    }
+  });
+},{threshold:.35});
+dearObserver.observe(dearTitle);
+
+const directionalShayariObserver=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      const card=entry.target;
+      card.classList.add("show");
+      const lines=card.querySelectorAll(".shayari-line");
+      lines.forEach((line,i)=>{
+        line.style.animationDelay=(0.18+i*0.10)+"s";
+      });
+      directionalShayariObserver.unobserve(card);
+    }
+  });
+},{threshold:.18,rootMargin:"0px 0px -5% 0px"});
+document.querySelectorAll(".shayari-card").forEach(card=>{
+  directionalShayariObserver.observe(card);
+});
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add("show")})
+},{threshold:.14});
+document.querySelectorAll(".reveal").forEach(e=>observer.observe(e));
+</script>
+</body>
+</html>
