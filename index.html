@@ -1,7 +1,4 @@
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -333,7 +330,14 @@ section{min-height:100svh;display:grid;place-items:center;padding:90px 20px;posi
       <img class="photo" src="image1.jpeg" alt="Anshu">
     </div>
     <div class="caption">Some people are beautiful.<br>Some people make life beautiful.<br><span style="font-family:'Noto Serif Devanagari',serif;font-size:20px;color:#dba9ba">तुम मेरी उन खूबसूरत वजहों में से एक हो, जिनसे मैं मुस्कुराता हूँ। ❤️</span></div>
-  </div>
+  </div>00
+DAYS
+01
+HOURS
+56
+MINUTES
+04
+SECONDS
 </section>
 
 <section>
@@ -378,7 +382,7 @@ section{min-height:100svh;display:grid;place-items:center;padding:90px 20px;posi
 
       <div class="shayari-card">
       <div class="shayari-inner">
-        <div class="shayari-number">LETTER 04 • FROM VISHAL</div>
+        <div class="shayari-number">LETTER 02 • FROM VISHAL</div>
         <h3>एक वादा सा 💍</h3>
         <p><span class="shayari-line" style="animation-delay:0.10s">हर मौसम में तुम्हारे साथ चलना है,</span>
 <span class="shayari-line" style="animation-delay:0.20s">तुम्हारी हँसी में अपनी खुशी ढूँढना है।</span>
@@ -400,7 +404,7 @@ section{min-height:100svh;display:grid;place-items:center;padding:90px 20px;posi
     <div class="gallery">
       <div class="card"><img src="image_2.jpeg" alt="Memory 1"></div>
       <div class="card"><img src="WhatsApp Image 2026-08-17 at 10.48.10 PM.jpeg" alt="Memory 2"></div>
-      <div class="card"><img src="WhatsApp Image 2026-08-18 at 12.09.28 AM.jpeg" alt="Memory 3"></div>
+      <div class="card"><img src="WhatsApp Image 2026-08-09 at 10.09.30 PM.jpeg" alt="Memory 3"></div>
        <div class="card"><img src="WhatsApp Image 2026-08-09 at 11.09.07 PM.jpeg" alt="Memory 3"></div>
         <div class="card"><img src="WhatsApp Image 2026-08-09 at 10.50.04 PM.jpeg" alt="Memory 3"></div>
          <div class="card"><img src="WhatsApp Image 2026-08-09 at 10.20.13 PM.jpeg" alt="Memory 3"></div>
@@ -436,8 +440,8 @@ section{min-height:100svh;display:grid;place-items:center;padding:90px 20px;posi
     <div class="shayari-grid">
       <div class="shayari-card">
       <div class="shayari-inner">
-        <div class="shayari-number">LETTER 12 • FROM VISHAL</div>
-        <h3>08 • मेरा अपना सा एहसास 🫶</h3>
+        <div class="shayari-number">LETTER 03 • FROM VISHAL</div>
+        <h3>• मेरा अपना सा एहसास 🫶</h3>
         <p><span class="shayari-line" style="animation-delay:0.10s">लोग कहते हैं पास रहना ज़रूरी है,</span>
 <span class="shayari-line" style="animation-delay:0.20s">मैंने तुमसे जाना, दिल का पास होना काफी है।</span>
 <span class="shayari-line" style="animation-delay:0.30s">तुम जहाँ भी रहो Anshu,</span>
@@ -448,8 +452,8 @@ section{min-height:100svh;display:grid;place-items:center;padding:90px 20px;posi
 
       <div class="shayari-card">
       <div class="shayari-inner">
-        <div class="shayari-number">LETTER 13 • FROM VISHAL</div>
-        <h3>09 • रात की आख़िरी बात 🌙</h3>
+        <div class="shayari-number">LETTER 04 • FROM VISHAL</div>
+        <h3>• रात की आख़िरी बात 🌙</h3>
         <p><span class="shayari-line" style="animation-delay:0.10s">सोने से पहले जब आँखें बंद करता हूँ,</span>
 <span class="shayari-line" style="animation-delay:0.20s">सबसे पहले तुम्हारा चेहरा याद आता है।</span>
 <span class="shayari-line" style="animation-delay:0.30s">फिर दिल चुपके से कहता है,</span>
@@ -541,17 +545,18 @@ function tick(){
   const since=document.getElementById("timeSince");
 
   if(isPast){
-    dEl.textContent="00";
-    hEl.textContent="00";
-    mEl.textContent="00";
-    sEl.textContent="00";
-
-    if(since){
-      since.textContent="The birthday has arrived • the love is still glowing ✨";
-    }
+    let x=now-target.getTime();
+    let day=Math.floor(x/86400000);x%=86400000;
+    let hr=Math.floor(x/3600000);x%=3600000;
+    let min=Math.floor(x/60000);x%=60000;
+    let sec=Math.floor(x/1000);
+    dEl.textContent=String(day).padStart(2,"0");
+    hEl.textContent=String(hr).padStart(2,"0");
+    mEl.textContent=String(min).padStart(2,"0");
+    sEl.textContent=String(sec).padStart(2,"0");
+    if(since){since.textContent="Time since your 25th birthday began • "+day+" day"+(day===1?"":"s")+" • "+String(hr).padStart(2,"0")+"h • "+String(min).padStart(2,"0")+"m • "+String(sec).padStart(2,"0")+"s ✨";}
     return;
   }
-
   let x=msLeft;
   let day=Math.floor(x/86400000);x%=86400000;
   let hr=Math.floor(x/3600000);x%=3600000;
